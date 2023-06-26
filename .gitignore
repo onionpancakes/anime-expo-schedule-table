@@ -1,5 +1,7 @@
 __pycache__
-.venv
+
+.venv/
+schedule_table/
+
 ax_schedule.html
-schedule_table.html
 schedule_table.csv

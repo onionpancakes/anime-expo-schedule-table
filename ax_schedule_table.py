@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup, NavigableString
 import csv
 import jinja2
 from datetime import datetime
+import itertools
 
 DAY_MAPPING = {
     'July 1 - Schedule': 1,
@@ -77,12 +78,14 @@ def write_csv(events, filename='schedule_table.csv'):
 JINJA_ENV = jinja2.Environment(loader=jinja2.PackageLoader('ax_schedule_table'))
 
 def write_schedule_table(events):
+    events_by_day = {d:list(ev) for d, ev in itertools.groupby(events, key=lambda x: x.get('day'))}
     template = JINJA_ENV.get_template('template.html')
-    render = template.render(events=events)
-    with open('schedule_table.html', 'w') as f:
-        print(render, file=f)
+    for day in [1,2,3,4]:
+        render = template.render(events=events_by_day.get(day))
+        with open(f'schedule_table/day{day}.html'.format(day), 'w') as f:
+            print(render, file=f)
 
 if __name__ == '__main__':
     events = read_events_local()
     write_csv(events)
-    write_schedule_table(e for e in events if e.get('day') == 1)
+    write_schedule_table(events)
