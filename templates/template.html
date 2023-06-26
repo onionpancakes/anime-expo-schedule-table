@@ -60,7 +60,7 @@
             <div style="grid-row: time-0000 / time-0000; grid-column: time">12:00 AM</div>
             {% for event in events %}
                 <div class="event"
-                     style="grid-row: time-{{ event.get('time_start') }} / time-{{ event.get('time_end') }};
+                     style="grid-row: time-{{ event.get('start_time') }} / time-{{ event.get('end_time') }};
                             grid-column: room-{{ event.get('room') }}">
                     {{ event.get('title') }}
                 </div>

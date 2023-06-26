@@ -32,8 +32,8 @@ ROOM_MAPPING = {
     '515 B': '515-B',
 }
 
-# (day, title, end)
-TIME_END_CORRECTION = {
+# { (day, title, end): end_correct }
+END_CORRECTION = {
     (4, 'Horimiya: The Missing Pieces panel by Crunchyroll and Aniplex, Inc.', '11:20 PM'): '11:20 AM',
 }
 
@@ -56,21 +56,21 @@ def parse_event(node):
     room = ROOM_MAPPING.get(room_text, room_text)
     # Start
     start = node.css.select_one('.timebar .start .bold').text.strip()
-    datetime_start = datetime.strptime(start, '%I:%M %p')
-    time_start = '{:02d}{:02d}'.format(datetime_start.hour, datetime_start.minute)
+    start_datetime = datetime.strptime(start, '%I:%M %p')
+    start_time = '{:02d}{:02d}'.format(start_datetime.hour, start_datetime.minute)
     # End
     end = node.css.select_one('.timebar .end .bold').text.strip()
-    end_correct = TIME_END_CORRECTION.get((day, title, end), end)
-    datetime_end = datetime.strptime(end_correct, '%I:%M %p')
-    time_end = '{:02d}{:02d}'.format(datetime_end.hour, datetime_end.minute)
+    end_correct = END_CORRECTION.get((day, title, end), end)
+    end_datetime = datetime.strptime(end_correct, '%I:%M %p')
+    end_time = '{:02d}{:02d}'.format(end_datetime.hour, end_datetime.minute)
     # Description
     description = ''.join(t.text for t in node.css.select_one('.desc') if isinstance(t, NavigableString))
     return {
         'day': day,
         'title': title,
         'room': room,
-        'time_start': time_start,
-        'time_end': time_end,
+        'start_time': start_time,
+        'end_time': end_time,
         'description': description,
         'cleared': is_cleared(description)
     }
@@ -87,7 +87,7 @@ def read_events_web(url='https://www.anime-expo.org/ax/schedule-2023/'):
 
 def write_csv(events, filename='schedule_table.csv'):
     with open(filename, 'w') as f:
-        fieldnames = ['day', 'time_start', 'time_end', 'room', 'cleared', 'title', 'description']
+        fieldnames = ['day', 'start_time', 'end_time', 'room', 'cleared', 'title', 'description']
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(events)
