@@ -197,7 +197,7 @@ html {
         [room-515-A] var(--room-width)
         [room-515-B] var(--room-width)
         ;
-    gap: 1rem;
+    gap: 4px 1rem;
 }
 
 .event {
