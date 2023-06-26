@@ -2,6 +2,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup, NavigableString
 import csv
 import jinja2
+from datetime import datetime
 
 DAY_MAPPING = {
     'July 1 - Schedule': 1,
@@ -41,15 +42,17 @@ def is_cleared(description):
 def parse_event(node):
     day_text = node.parent.attrs['data-day']
     room_text = node.css.select_one('.timebar .channel .bold').text.strip()
-    start = node.css.select_one('.timebar .start .bold').text.strip(),
-    end = node.css.select_one('.timebar .end .bold').text.strip(),
+    start = node.css.select_one('.timebar .start .bold').text.strip()
+    datetime_start = datetime.strptime(start, '%I:%M %p')
+    end = node.css.select_one('.timebar .end .bold').text.strip()
+    datetime_end = datetime.strptime(end, '%I:%M %p')
     description = ''.join(t.text for t in node.css.select_one('.desc') if isinstance(t, NavigableString))
     return {
         'day': DAY_MAPPING.get(day_text),
         'title': node.css.select_one('.title').text.strip(),
         'room': ROOM_MAPPING.get(room_text, room_text),
-        'time_start': 1000,
-        'time_end': 1030,
+        'time_start': '{:02d}{:02d}'.format(datetime_start.hour, datetime_start.minute),
+        'time_end': '{:02d}{:02d}'.format(datetime_end.hour, datetime_end.minute),
         'description': description,
         'cleared': is_cleared(description)
     }
@@ -82,4 +85,4 @@ def write_schedule_table(events):
 if __name__ == '__main__':
     events = read_events_local()
     write_csv(events)
-    write_schedule_table(events)
+    write_schedule_table(e for e in events if e.get('day') == 1)
