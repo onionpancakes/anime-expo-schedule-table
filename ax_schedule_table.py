@@ -32,6 +32,11 @@ ROOM_MAPPING = {
     '515 B': '515-B',
 }
 
+# (day, title, end)
+TIME_END_CORRECTION = {
+    (4, 'Horimiya: The Missing Pieces panel by Crunchyroll and Aniplex, Inc.', '11:20 PM'): '11:20 AM',
+}
+
 def is_cleared(description):
     ldesc = description.lower()
     if 'this room will be cleared' in ldesc:
@@ -41,19 +46,31 @@ def is_cleared(description):
     return None
 
 def parse_event(node):
+    # Day
     day_text = node.parent.attrs['data-day']
+    day = DAY_MAPPING.get(day_text)
+    # Title
+    title = node.css.select_one('.title').text.strip()
+    # Room
     room_text = node.css.select_one('.timebar .channel .bold').text.strip()
+    room = ROOM_MAPPING.get(room_text, room_text)
+    # Start
     start = node.css.select_one('.timebar .start .bold').text.strip()
     datetime_start = datetime.strptime(start, '%I:%M %p')
+    time_start = '{:02d}{:02d}'.format(datetime_start.hour, datetime_start.minute)
+    # End
     end = node.css.select_one('.timebar .end .bold').text.strip()
-    datetime_end = datetime.strptime(end, '%I:%M %p')
+    end_correct = TIME_END_CORRECTION.get((day, title, end), end)
+    datetime_end = datetime.strptime(end_correct, '%I:%M %p')
+    time_end = '{:02d}{:02d}'.format(datetime_end.hour, datetime_end.minute)
+    # Description
     description = ''.join(t.text for t in node.css.select_one('.desc') if isinstance(t, NavigableString))
     return {
-        'day': DAY_MAPPING.get(day_text),
-        'title': node.css.select_one('.title').text.strip(),
-        'room': ROOM_MAPPING.get(room_text, room_text),
-        'time_start': '{:02d}{:02d}'.format(datetime_start.hour, datetime_start.minute),
-        'time_end': '{:02d}{:02d}'.format(datetime_end.hour, datetime_end.minute),
+        'day': day,
+        'title': title,
+        'room': room,
+        'time_start': time_start,
+        'time_end': time_end,
         'description': description,
         'cleared': is_cleared(description)
     }
