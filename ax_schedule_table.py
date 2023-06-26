@@ -20,6 +20,7 @@ ROOM_MAPPING = {
     'The Novo': 'the-novo',
     'JW-Diamond (VAPOLLO VIRTUAL STAGE)': 'jw-diamond',
     'JW-Diamond  (VAPOLLO VIRTUAL STAGE)': 'jw-diamond',
+    'JW-Platinum': 'jw-platinum',
     '402 AB': '402-AB',
     '403 AB': '403-AB',
     '404 AB': '404-AB',
