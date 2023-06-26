@@ -11,8 +11,23 @@ DAY_MAPPING = {
 }
 
 ROOM_MAPPING = {
+    'Main Events': 'main-events',
+    'Community Stage': 'community-stage',
+    'Grammy Museum Terrace': 'grammy-museum-terrace',
+    'Petree Hall': 'petree-hall',
+    'The Novo': 'the-novo',
     'JW-Diamond (VAPOLLO VIRTUAL STAGE)': 'jw-diamond',
     'JW-Diamond  (VAPOLLO VIRTUAL STAGE)': 'jw-diamond',
+    '402 AB': '402-AB',
+    '403 AB': '403-AB',
+    '404 AB': '404-AB',
+    '406 AB': '406-AB',
+    '408 AB': '408-AB',
+    '409 AB': '409-AB',
+    '411': '411',
+    '511': '511',
+    '515 A': '515-A',
+    '515 B': '515-B',
 }
 
 def is_cleared(description):
