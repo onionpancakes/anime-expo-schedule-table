@@ -66,10 +66,13 @@
                 <div class="event cleared-{{ event.get('cleared') }}"
                      style="grid-row: time-{{ event.get('start_time') }} / time-{{ event.get('end_time') }};
                             grid-column: room-{{ event.get('room') }}">
-                    <p>
+                    <p class="time">
+                        {{ event.get('start') }} - {{ event.get('end') }}
+                    </p>
+                    <p class="title">
                         {{ event.get('title') }}
                     </p>
-                    <p>
+                    <p class="cleared">
                         {% if event.get('cleared') == 'Y' %}
                         Cleared
                         {% elif event.get('cleared') == 'N' %}

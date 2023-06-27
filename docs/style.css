@@ -215,3 +215,11 @@ html {
 .event.cleared-N {
     background-color: pink;
 }
+
+.event .title {
+    font-weight: bold;
+}
+
+.event .cleared {
+    font-style: italic;
+}
