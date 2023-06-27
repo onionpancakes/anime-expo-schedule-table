@@ -18,7 +18,7 @@ header {
 }
 
 header nav {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     position: sticky;
     left: 0px;
@@ -28,6 +28,26 @@ header nav {
 header nav a {
     width: 6rem;
     text-align: center;
+}
+
+.cleared-Y {
+    background-color: paleturquoise;
+}
+
+.cleared-N {
+    background-color: pink;
+}
+
+.legend-cleared {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.legend-cleared.cleared-Y {
+    border-style: dashed;
 }
 
 .schedule {
@@ -238,11 +258,7 @@ header nav a {
 }
 
 .event.cleared-Y {
-    background-color: paleturquoise;
-}
-
-.event.cleared-N {
-    background-color: pink;
+    border-style: dashed;
 }
 
 .event .event-title {
