@@ -3,6 +3,32 @@ html {
     --room-width: minmax(160px, 1fr);
 }
 
+h1, h2{
+    margin: 4px;
+}
+
+hr {
+    color: gainsboro;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    left: 0;
+}
+
+header nav a {
+    width: 6rem;
+    text-align: center;
+}
+
 .schedule {
     display: grid;
     grid-template-rows:
@@ -216,10 +242,10 @@ html {
     background-color: pink;
 }
 
-.event .title {
+.event .event-title {
     font-weight: bold;
 }
 
-.event .cleared {
+.event .event-cleared {
     font-style: italic;
 }

@@ -1,21 +1,23 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
         <link rel="stylesheet" href="style.css">
         <title>Day {{ day }} - AX 2023</title>
     </head>
     <body>
         <h1>Anime Expo Schedule Table 2023</h1>
-        <section>
-            <h2>Day {{ day }}</h2>
+        <header>
             <nav>
+                <h2>Day {{ day }}</h2>
                 <a href="day1.html">Day 1</a>
                 <a href="day2.html">Day 2</a>
                 <a href="day3.html">Day 3</a>
                 <a href="day4.html">Day 4</a>
             </nav>
-        </section>
+            <hr>
+        </header>
         <section class="schedule">
-            <div style="grid-column: time">Time</div>
+            <div style="grid-column: time"></div>
             <div style="grid-column: room-main-events">Main Events</div>
             <div style="grid-column: room-petree-hall">Petree Hall</div>
             <div style="grid-column: room-community-stage">Community Stage</div>
@@ -66,13 +68,13 @@
                 <div class="event cleared-{{ event.get('cleared') }}"
                      style="grid-row: time-{{ event.get('start_time') }} / time-{{ event.get('end_time') }};
                             grid-column: room-{{ event.get('room') }}">
-                    <p class="time">
+                    <p class="event-time">
                         {{ event.get('start') }} - {{ event.get('end') }}
                     </p>
-                    <p class="title">
+                    <p class="event-title">
                         {{ event.get('title') }}
                     </p>
-                    <p class="cleared">
+                    <p class="event-cleared">
                         {% if event.get('cleared') == 'Y' %}
                         Cleared
                         {% elif event.get('cleared') == 'N' %}
