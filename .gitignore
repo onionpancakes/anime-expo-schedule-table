@@ -1,7 +1,6 @@
 __pycache__
 
 .venv/
-schedule_table/
 
 ax_schedule.html
 schedule_table.csv

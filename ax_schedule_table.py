@@ -109,7 +109,7 @@ def write_schedule_table(events):
     template = JINJA_ENV.get_template('template.html')
     for day in ['1','2','3','4']:
         render = template.render(day=day, events=events_by_day.get(day))
-        with open(f'schedule_table/day{day}.html'.format(day), 'w') as f:
+        with open(f'docs/day{day}.html'.format(day), 'w') as f:
             print(render, file=f)
 
 if __name__ == '__main__':
