@@ -21,7 +21,8 @@ header nav {
     display: flex;
     align-items: center;
     position: sticky;
-    left: 0;
+    left: 0px;
+    width: fit-content;
 }
 
 header nav a {
@@ -30,8 +31,10 @@ header nav a {
 }
 
 .schedule {
+    width: fit-content;
     display: grid;
     grid-template-rows:
+        [nav] auto
         [rooms] auto
         [time-1000] var(--time-height)
         [time-1005] var(--time-height)

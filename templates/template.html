@@ -6,17 +6,17 @@
     </head>
     <body>
         <h1>Anime Expo Schedule Table 2023</h1>
-        <header>
-            <nav>
-                <h2>Day {{ day }}</h2>
-                <a href="day1.html">Day 1</a>
-                <a href="day2.html">Day 2</a>
-                <a href="day3.html">Day 3</a>
-                <a href="day4.html">Day 4</a>
-            </nav>
-            <hr>
-        </header>
         <section class="schedule">
+            <header style="grid-column: 1 / -1">
+                <nav>
+                    <h2>Day {{ day }}</h2>
+                    <a href="day1.html">Day 1</a>
+                    <a href="day2.html">Day 2</a>
+                    <a href="day3.html">Day 3</a>
+                    <a href="day4.html">Day 4</a>
+                </nav>
+                <hr>
+            </header>
             <div style="grid-column: time"></div>
             <div style="grid-column: room-main-events">Main Events</div>
             <div style="grid-column: room-petree-hall">Petree Hall</div>
