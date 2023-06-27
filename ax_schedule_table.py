@@ -14,13 +14,13 @@ DAY_MAPPING = {
 
 ROOM_MAPPING = {
     'Main Events': 'main-events',
-    'Community Stage': 'community-stage',
-    'Grammy Museum Terrace': 'grammy-museum-terrace',
     'Petree Hall': 'petree-hall',
-    'The Novo': 'the-novo',
+    'Community Stage': 'community-stage',
     'JW-Diamond (VAPOLLO VIRTUAL STAGE)': 'jw-diamond',
     'JW-Diamond  (VAPOLLO VIRTUAL STAGE)': 'jw-diamond',
     'JW-Platinum': 'jw-platinum',
+    'The Novo': 'the-novo',
+    'Grammy Museum Terrace': 'grammy-museum-terrace',
     '402 AB': '402-AB',
     '403 AB': '403-AB',
     '404 AB': '404-AB',
