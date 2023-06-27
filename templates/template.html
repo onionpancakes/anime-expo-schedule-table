@@ -75,10 +75,11 @@
                         {{ event.get('title') }}
                     </p>
                     <p class="event-cleared">
+                        {{ event.get('room') }}
                         {% if event.get('cleared') == 'Y' %}
-                        Cleared
+                        - Cleared
                         {% elif event.get('cleared') == 'N' %}
-                        Not Cleared
+                        - Not Cleared
                         {% else %}
                         {% endif %}
                     </p>
