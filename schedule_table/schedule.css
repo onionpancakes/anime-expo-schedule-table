@@ -204,6 +204,8 @@ html {
     padding: 0 8px;
     border: 1px solid grey;
     border-radius: 8px;
+    font-size: .9em;
+    text-align: center;
 }
 
 .event.cleared-Y {
