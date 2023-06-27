@@ -63,10 +63,20 @@
             <div style="grid-row: time-2330 / time-0000; grid-column: time">11:30 PM</div>
             <div style="grid-row: time-0000 / time-0000; grid-column: time">12:00 AM</div>
             {% for event in events %}
-                <div class="event"
+                <div class="event cleared-{{ event.get('cleared') }}"
                      style="grid-row: time-{{ event.get('start_time') }} / time-{{ event.get('end_time') }};
                             grid-column: room-{{ event.get('room') }}">
-                    {{ event.get('title') }}
+                    <p>
+                        {{ event.get('title') }}
+                    </p>
+                    <p>
+                        {% if event.get('cleared') == 'Y' %}
+                        Cleared
+                        {% elif event.get('cleared') == 'N' %}
+                        Not Cleared
+                        {% else %}
+                        {% endif %}
+                    </p>
                 </div>
             {% endfor %}
         </section>

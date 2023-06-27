@@ -201,6 +201,15 @@ html {
 }
 
 .event {
-    padding: 1rem;
-    border: 1px solid black;
+    padding: 0 8px;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.event.cleared-Y {
+    background-color: paleturquoise;
+}
+
+.event.cleared-N {
+    background-color: pink;
 }
