@@ -101,6 +101,8 @@ def read_events():
         yield from csv.DictReader(f)
     with open('data/ax_dance_events.csv') as f:
         yield from csv.DictReader(f)
+    with open('data/beer_garden_events.csv') as f:
+        yield from csv.DictReader(f)
     with open('data/lounge21_events.csv') as f:
         yield from csv.DictReader(f)
 
