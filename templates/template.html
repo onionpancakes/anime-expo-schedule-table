@@ -87,7 +87,7 @@
                     <p class="event-time">
                         {{ event.get('start') }} - {{ event.get('end') }}
                     </p>
-                    <p class="event-title" title="{{ event.get('description') }}">
+                    <p class="event-title" title="{{ event.get('description')|escape }}">
                         {{ event.get('title') }}
                     </p>
                     <p class="event-room">
