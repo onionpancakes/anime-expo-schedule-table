@@ -80,7 +80,7 @@
                     <p class="event-time">
                         {{ event.get('start') }} - {{ event.get('end') }}
                     </p>
-                    <p class="event-title">
+                    <p class="event-title" title="{{ event.get('description') }}">
                         {{ event.get('title') }}
                     </p>
                     <p class="event-cleared">
