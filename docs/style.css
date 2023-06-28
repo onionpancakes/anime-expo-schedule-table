@@ -1,6 +1,12 @@
 html {
     --time-height: 16px;
-    --room-width: minmax(160px, 1fr);
+    --room-width: 160px;
+}
+
+body {
+    width: fit-content;
+    margin: 0;
+    padding: 16px;
 }
 
 h1, h2 {
