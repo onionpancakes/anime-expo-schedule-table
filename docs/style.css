@@ -3,7 +3,7 @@ html {
     --room-width: minmax(160px, 1fr);
 }
 
-h1, h2{
+h1, h2 {
     margin: 4px;
 }
 
@@ -225,6 +225,29 @@ header nav a {
         [time-2350] var(--time-height)
         [time-2355] var(--time-height)
         [time-0000] var(--time-height)
+        [time-0005] var(--time-height)
+        [time-0010] var(--time-height)
+        [time-0015] var(--time-height)
+        [time-0020] var(--time-height)
+        [time-0025] var(--time-height)
+        [time-0030] var(--time-height)
+        [time-0035] var(--time-height)
+        [time-0040] var(--time-height)
+        [time-0045] var(--time-height)
+        [time-0050] var(--time-height)
+        [time-0055] var(--time-height)
+        [time-0100] var(--time-height)
+        [time-0105] var(--time-height)
+        [time-0110] var(--time-height)
+        [time-0115] var(--time-height)
+        [time-0120] var(--time-height)
+        [time-0125] var(--time-height)
+        [time-0130] var(--time-height)
+        [time-0135] var(--time-height)
+        [time-0140] var(--time-height)
+        [time-0145] var(--time-height)
+        [time-0150] var(--time-height)
+        [time-0155] var(--time-height)
         ;
     grid-template-columns:
         [time] 8rem
@@ -245,6 +268,7 @@ header nav a {
         [room-511] var(--room-width)
         [room-515-A] var(--room-width)
         [room-515-B] var(--room-width)
+        [room-ax-dance] var(--room-width)
         ;
     gap: 4px 1rem;
 }

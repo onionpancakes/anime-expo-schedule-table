@@ -99,6 +99,8 @@ def read_events():
         yield from csv.DictReader(f)
     with open('data/community_events.csv') as f:
         yield from csv.DictReader(f)
+    with open('data/ax_dance_events.csv') as f:
+        yield from csv.DictReader(f)
 
 JINJA_ENV = jinja2.Environment(loader=jinja2.PackageLoader('ax_schedule_table'))
 
