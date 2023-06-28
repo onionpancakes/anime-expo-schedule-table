@@ -83,7 +83,7 @@ def parse_ax_schedule_local(filepath='ax_schedule.html'):
     return [parse_event(e) for e in soup.css.select('.event')]
 
 def parse_ax_schedule_web(url='https://www.anime-expo.org/ax/schedule-2023/'):
-    with urlopen(AX_SCHEDULE_URL) as f:
+    with urlopen(url) as f:
         soup = BeautifulSoup(f, 'html.parser')
     return [parse_event(e) for e in soup.css.select('.event')]
 
@@ -113,7 +113,7 @@ def write_schedule_table(events):
             print(render, file=f)
 
 if __name__ == '__main__':
-    parsed_events = parse_ax_schedule_local()
+    parsed_events = parse_ax_schedule_web()
     write_parsed_events_csv(parsed_events)
     # Generate schedule table
     events = read_events()
