@@ -37,11 +37,21 @@ END_CORRECTION = {
     ('4', 'Horimiya: The Missing Pieces panel by Crunchyroll and Aniplex, Inc.', '11:20 PM'): '11:20 AM',
 }
 
-def is_cleared(description):
+def is_cleared_prior(description):
     ldesc = description.lower()
-    if 'this room will be cleared' in ldesc:
+    if 'this room will be cleared prior to this panel' in ldesc:
         return 'Y'
-    if 'this room will not be cleared' in ldesc:
+    if 'this room will not be cleared prior to this panel' in ldesc:
+        return 'N'
+    return '?'
+
+def is_cleared_after(description):
+    ldesc = description.lower()
+    if 'this room will be cleared for the next panel' in ldesc:
+        return 'Y'
+    if 'this room will not be cleared after this panel' in ldesc:
+        return 'N'
+    if 'this room will not be cleared for the next panel' in ldesc:
         return 'N'
     return '?'
 
@@ -74,7 +84,8 @@ def parse_event(node):
         'start_time': start_time,
         'end_time': end_time,
         'description': description,
-        'cleared': is_cleared(description)
+        'cleared_prior': is_cleared_prior(description),
+        'cleared_after': is_cleared_after(description),
     }
 
 def parse_ax_schedule_local(filepath='ax_schedule.html'):
@@ -89,7 +100,7 @@ def parse_ax_schedule_web(url='https://www.anime-expo.org/ax/schedule-2023/'):
 
 def write_parsed_events_csv(events, filepath='data/parsed_events.csv'):
     with open(filepath, 'w') as f:
-        fieldnames = ['day', 'start', 'end', 'start_time', 'end_time', 'room', 'cleared', 'title', 'description']
+        fieldnames = ['day', 'start', 'end', 'start_time', 'end_time', 'room', 'cleared_prior', 'cleared_after', 'title', 'description']
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(events)

@@ -17,6 +17,10 @@ hr {
     color: gainsboro;
 }
 
+p {
+    margin: 8px 0;
+}
+
 header {
     position: sticky;
     top: 0px;
@@ -36,11 +40,11 @@ header nav a {
     text-align: center;
 }
 
-.cleared-Y {
+.cleared-prior-Y {
     background-color: paleturquoise;
 }
 
-.cleared-N {
+.cleared-prior-N {
     background-color: pink;
 }
 
@@ -52,7 +56,7 @@ header nav a {
     border-radius: 4px;
 }
 
-.legend-cleared.cleared-Y {
+.legend-cleared.cleared-prior-Y {
     border-style: dashed;
 }
 
@@ -289,7 +293,7 @@ header nav a {
     text-align: center;
 }
 
-.event.cleared-Y {
+.event.cleared-prior-Y {
     border-style: dashed;
 }
 
@@ -297,7 +301,7 @@ header nav a {
     font-weight: bold;
 }
 
-.event .event-cleared {
+.event .event-room, .event .event-cleared {
     font-size: 0.9em;
     font-style: italic;
 }

@@ -16,11 +16,11 @@
                     <a href="day4.html">Day 4</a>
                     <div class="legend">
                         <span>
-                            <span class="legend-cleared cleared-Y"></span> Cleared
+                            <span class="legend-cleared cleared-prior-Y"></span> Cleared Prior
                         </span>
                         &nbsp;
                         <span>
-                            <span class="legend-cleared cleared-N"></span> Not Cleared
+                            <span class="legend-cleared cleared-prior-N"></span> Not Cleared Prior
                         </span>
                     </div>
                 </nav>
@@ -81,7 +81,7 @@
             <div style="grid-row: time-0130 / time-0200; grid-column: time">1:30 AM</div>
             <div style="grid-row: time-0200 / time-0200; grid-column: time">2:00 AM</div>
             {% for event in events %}
-                <div class="event cleared-{{ event.get('cleared') }}"
+                <div class="event cleared-prior-{{ event.get('cleared_prior') }}"
                      style="grid-row: time-{{ event.get('start_time') }} / time-{{ event.get('end_time') }};
                             grid-column: room-{{ event.get('room') }}">
                     <p class="event-time">
@@ -90,12 +90,23 @@
                     <p class="event-title" title="{{ event.get('description') }}">
                         {{ event.get('title') }}
                     </p>
-                    <p class="event-cleared">
+                    <p class="event-room">
                         {{ event.get('room') }}
-                        {% if event.get('cleared') == 'Y' %}
-                        - Cleared
-                        {% elif event.get('cleared') == 'N' %}
-                        - Not Cleared
+                    </p>
+                    <p class="event-cleared">
+                        {% if event.get('cleared_prior') == 'Y' %}
+                        Cleared Prior
+                        {% elif event.get('cleared_prior') == 'N' %}
+                        Not Cleared Prior
+                        {% else %}
+                        {% endif %}
+                        {% if event.get('cleared_prior') != '?' and event.get('cleared_after') != '?' %}
+                        <br>
+                        {% endif %}
+                        {% if event.get('cleared_after') == 'Y' %}
+                        Cleared After
+                        {% elif event.get('cleared_after') == 'N' %}
+                        Not Cleared After
                         {% else %}
                         {% endif %}
                     </p>
