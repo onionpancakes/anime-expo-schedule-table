@@ -269,6 +269,7 @@ header nav a {
         [room-515-A] var(--room-width)
         [room-515-B] var(--room-width)
         [room-ax-dance] var(--room-width)
+        [room-lounge21] var(--room-width)
         ;
     gap: 4px 1rem;
 }
