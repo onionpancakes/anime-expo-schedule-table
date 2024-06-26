@@ -1,0 +1,307 @@
+html {
+    --time-height: 16px;
+    --room-width: 160px;
+}
+
+body {
+    width: fit-content;
+    margin: 0;
+    padding: 16px;
+}
+
+h1, h2 {
+    margin: 4px;
+}
+
+hr {
+    color: gainsboro;
+}
+
+p {
+    margin: 8px 0;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+header nav {
+    display: inline-flex;
+    align-items: center;
+    position: sticky;
+    left: 0px;
+    width: fit-content;
+}
+
+header nav a {
+    width: 6rem;
+    text-align: center;
+}
+
+.cleared-prior-Y {
+    background-color: paleturquoise;
+}
+
+.cleared-prior-N {
+    background-color: pink;
+}
+
+.legend-cleared {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.legend-cleared.cleared-prior-Y {
+    border-style: dashed;
+}
+
+.schedule {
+    width: fit-content;
+    display: grid;
+    grid-template-rows:
+        [nav] auto
+        [rooms] auto
+        [time-1000] var(--time-height)
+        [time-1005] var(--time-height)
+        [time-1010] var(--time-height)
+        [time-1015] var(--time-height)
+        [time-1020] var(--time-height)
+        [time-1025] var(--time-height)
+        [time-1030] var(--time-height)
+        [time-1035] var(--time-height)
+        [time-1040] var(--time-height)
+        [time-1045] var(--time-height)
+        [time-1050] var(--time-height)
+        [time-1055] var(--time-height)
+        [time-1100] var(--time-height)
+        [time-1105] var(--time-height)
+        [time-1110] var(--time-height)
+        [time-1115] var(--time-height)
+        [time-1120] var(--time-height)
+        [time-1125] var(--time-height)
+        [time-1130] var(--time-height)
+        [time-1135] var(--time-height)
+        [time-1140] var(--time-height)
+        [time-1145] var(--time-height)
+        [time-1150] var(--time-height)
+        [time-1155] var(--time-height)
+        [time-1200] var(--time-height)
+        [time-1205] var(--time-height)
+        [time-1210] var(--time-height)
+        [time-1215] var(--time-height)
+        [time-1220] var(--time-height)
+        [time-1225] var(--time-height)
+        [time-1230] var(--time-height)
+        [time-1235] var(--time-height)
+        [time-1240] var(--time-height)
+        [time-1245] var(--time-height)
+        [time-1250] var(--time-height)
+        [time-1255] var(--time-height)
+        [time-1300] var(--time-height)
+        [time-1305] var(--time-height)
+        [time-1310] var(--time-height)
+        [time-1315] var(--time-height)
+        [time-1320] var(--time-height)
+        [time-1325] var(--time-height)
+        [time-1330] var(--time-height)
+        [time-1335] var(--time-height)
+        [time-1340] var(--time-height)
+        [time-1345] var(--time-height)
+        [time-1350] var(--time-height)
+        [time-1355] var(--time-height)
+        [time-1400] var(--time-height)
+        [time-1405] var(--time-height)
+        [time-1410] var(--time-height)
+        [time-1415] var(--time-height)
+        [time-1420] var(--time-height)
+        [time-1425] var(--time-height)
+        [time-1430] var(--time-height)
+        [time-1435] var(--time-height)
+        [time-1440] var(--time-height)
+        [time-1445] var(--time-height)
+        [time-1450] var(--time-height)
+        [time-1455] var(--time-height)
+        [time-1500] var(--time-height)
+        [time-1505] var(--time-height)
+        [time-1510] var(--time-height)
+        [time-1515] var(--time-height)
+        [time-1520] var(--time-height)
+        [time-1525] var(--time-height)
+        [time-1530] var(--time-height)
+        [time-1535] var(--time-height)
+        [time-1540] var(--time-height)
+        [time-1545] var(--time-height)
+        [time-1550] var(--time-height)
+        [time-1555] var(--time-height)
+        [time-1600] var(--time-height)
+        [time-1605] var(--time-height)
+        [time-1610] var(--time-height)
+        [time-1615] var(--time-height)
+        [time-1620] var(--time-height)
+        [time-1625] var(--time-height)
+        [time-1630] var(--time-height)
+        [time-1635] var(--time-height)
+        [time-1640] var(--time-height)
+        [time-1645] var(--time-height)
+        [time-1650] var(--time-height)
+        [time-1655] var(--time-height)
+        [time-1700] var(--time-height)
+        [time-1705] var(--time-height)
+        [time-1710] var(--time-height)
+        [time-1715] var(--time-height)
+        [time-1720] var(--time-height)
+        [time-1725] var(--time-height)
+        [time-1730] var(--time-height)
+        [time-1735] var(--time-height)
+        [time-1740] var(--time-height)
+        [time-1745] var(--time-height)
+        [time-1750] var(--time-height)
+        [time-1755] var(--time-height)
+        [time-1800] var(--time-height)
+        [time-1805] var(--time-height)
+        [time-1810] var(--time-height)
+        [time-1815] var(--time-height)
+        [time-1820] var(--time-height)
+        [time-1825] var(--time-height)
+        [time-1830] var(--time-height)
+        [time-1835] var(--time-height)
+        [time-1840] var(--time-height)
+        [time-1845] var(--time-height)
+        [time-1850] var(--time-height)
+        [time-1855] var(--time-height)
+        [time-1900] var(--time-height)
+        [time-1905] var(--time-height)
+        [time-1910] var(--time-height)
+        [time-1915] var(--time-height)
+        [time-1920] var(--time-height)
+        [time-1925] var(--time-height)
+        [time-1930] var(--time-height)
+        [time-1935] var(--time-height)
+        [time-1940] var(--time-height)
+        [time-1945] var(--time-height)
+        [time-1950] var(--time-height)
+        [time-1955] var(--time-height)
+        [time-2000] var(--time-height)
+        [time-2005] var(--time-height)
+        [time-2010] var(--time-height)
+        [time-2015] var(--time-height)
+        [time-2020] var(--time-height)
+        [time-2025] var(--time-height)
+        [time-2030] var(--time-height)
+        [time-2035] var(--time-height)
+        [time-2040] var(--time-height)
+        [time-2045] var(--time-height)
+        [time-2050] var(--time-height)
+        [time-2055] var(--time-height)
+        [time-2100] var(--time-height)
+        [time-2105] var(--time-height)
+        [time-2110] var(--time-height)
+        [time-2115] var(--time-height)
+        [time-2120] var(--time-height)
+        [time-2125] var(--time-height)
+        [time-2130] var(--time-height)
+        [time-2135] var(--time-height)
+        [time-2140] var(--time-height)
+        [time-2145] var(--time-height)
+        [time-2150] var(--time-height)
+        [time-2155] var(--time-height)
+        [time-2200] var(--time-height)
+        [time-2205] var(--time-height)
+        [time-2210] var(--time-height)
+        [time-2215] var(--time-height)
+        [time-2220] var(--time-height)
+        [time-2225] var(--time-height)
+        [time-2230] var(--time-height)
+        [time-2235] var(--time-height)
+        [time-2240] var(--time-height)
+        [time-2245] var(--time-height)
+        [time-2250] var(--time-height)
+        [time-2255] var(--time-height)
+        [time-2300] var(--time-height)
+        [time-2305] var(--time-height)
+        [time-2310] var(--time-height)
+        [time-2315] var(--time-height)
+        [time-2320] var(--time-height)
+        [time-2325] var(--time-height)
+        [time-2330] var(--time-height)
+        [time-2335] var(--time-height)
+        [time-2340] var(--time-height)
+        [time-2345] var(--time-height)
+        [time-2350] var(--time-height)
+        [time-2355] var(--time-height)
+        [time-0000] var(--time-height)
+        [time-0005] var(--time-height)
+        [time-0010] var(--time-height)
+        [time-0015] var(--time-height)
+        [time-0020] var(--time-height)
+        [time-0025] var(--time-height)
+        [time-0030] var(--time-height)
+        [time-0035] var(--time-height)
+        [time-0040] var(--time-height)
+        [time-0045] var(--time-height)
+        [time-0050] var(--time-height)
+        [time-0055] var(--time-height)
+        [time-0100] var(--time-height)
+        [time-0105] var(--time-height)
+        [time-0110] var(--time-height)
+        [time-0115] var(--time-height)
+        [time-0120] var(--time-height)
+        [time-0125] var(--time-height)
+        [time-0130] var(--time-height)
+        [time-0135] var(--time-height)
+        [time-0140] var(--time-height)
+        [time-0145] var(--time-height)
+        [time-0150] var(--time-height)
+        [time-0155] var(--time-height)
+        ;
+    grid-template-columns:
+        [time] 8rem
+        [room-main-events] var(--room-width)
+        [room-petree-hall] var(--room-width)
+        [room-jw-platinum] var(--room-width)
+        [room-jw-diamond] var(--room-width)
+        [room-community-stage] var(--room-width)
+        [room-the-novo] var(--room-width)
+        [room-grammy-museum-terrace] var(--room-width)
+        [room-402-AB] var(--room-width)
+        [room-403-AB] var(--room-width)
+        [room-404-AB] var(--room-width)
+        [room-406-AB] var(--room-width)
+        [room-408-AB] var(--room-width)
+        [room-409-AB] var(--room-width)
+        [room-411] var(--room-width)
+        [room-511] var(--room-width)
+        [room-515-A] var(--room-width)
+        [room-515-B] var(--room-width)
+        [room-ax-dance] var(--room-width)
+        [room-beer-garden] var(--room-width)
+        [room-lounge21] var(--room-width)
+        ;
+    gap: 4px 1rem;
+}
+
+.event {
+    padding: 0 8px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    font-size: .9em;
+    text-align: center;
+}
+
+.event.cleared-prior-Y {
+    border-style: dashed;
+}
+
+.event .event-title {
+    font-weight: bold;
+}
+
+.event .event-room, .event .event-cleared {
+    font-size: 0.9em;
+    font-style: italic;
+}
