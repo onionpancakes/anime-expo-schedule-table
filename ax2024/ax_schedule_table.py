@@ -165,7 +165,7 @@ def parse_activity(url, room):
 
 def read_events():
     with open('ax2024/data/parsed_events.csv') as f:
-        yield from (e for e in csv.DictReader(f) if e['cancelled'] != 'True')
+        yield from (e for e in csv.DictReader(f) if e.get('cancelled') != 'True' and e.get('room') != 'ax-dance')
     with open('ax2024/data/community_events.csv') as f:
         yield from csv.DictReader(f)
     with open('ax2024/data/ax_dance_events.csv') as f:
