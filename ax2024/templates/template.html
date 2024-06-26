@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
+        <link rel="stylesheet" href="style.css">
+        <title>Day {{ day }} - AX 2024</title>
+    </head>
+    <body>
+        <h1>Anime Expo Schedule Table 2024</h1>
+        <section class="schedule">
+            <header style="grid-column: 1 / -1">
+                <nav>
+                    <h2>Day {{ day }}</h2>
+                    <a href="day1.html">Day 1</a>
+                    <a href="day2.html">Day 2</a>
+                    <a href="day3.html">Day 3</a>
+                    <a href="day4.html">Day 4</a>
+                    <div class="legend">
+                        <span>
+                            <span class="legend-cleared cleared-prior-Y"></span> Cleared Prior
+                        </span>
+                        &nbsp;
+                        <span>
+                            <span class="legend-cleared cleared-prior-N"></span> Not Cleared Prior
+                        </span>
+                        &nbsp;
+                        <span>
+                            Last updated: {{ last_updated_time }}
+                        </span>
+                    </div>
+                </nav>
+                <hr>
+            </header>
+            <div style="grid-column: time"></div>
+            <div style="grid-column: room-main-events">Main Events</div>
+            <div style="grid-column: room-petree-hall">Petree Hall</div>
+            <div style="grid-column: room-jw-platinum">JW Platinum</div>
+            <div style="grid-column: room-jw-diamond">JW Diamond</div>
+            <div style="grid-column: room-ax-crossing-stage">AX Crossing Stage</div>
+            <div style="grid-column: room-community-stage">Community Stage</div>
+            <div style="grid-column: room-the-novo">The Novo</div>
+            <!--
+            <div style="grid-column: room-grammy-museum-terrace">Grammy Museum Terrace</div>
+            -->
+            <div style="grid-column: room-402-AB">402 AB</div>
+            <div style="grid-column: room-403-AB">403 AB</div>
+            <div style="grid-column: room-404-AB">404 AB</div>
+            <div style="grid-column: room-406-AB">406 AB</div>
+            <div style="grid-column: room-408-AB">408 AB</div>
+            <div style="grid-column: room-409-AB">409 AB</div>
+            <div style="grid-column: room-411">411</div>
+            <div style="grid-column: room-511-ABC">511 ABC</div>
+            <!--
+            <div style="grid-column: room-511">511</div>
+            <div style="grid-column: room-515-A">515 A</div>
+            <div style="grid-column: room-515-B">515 B</div>
+            -->
+            <div style="grid-column: room-ax-dance">AX Dance</div>
+            <div style="grid-column: room-beer-garden">Beer Garden</div>
+            <div style="grid-column: room-lounge21">Lounge 21</div>
+            <div style="grid-row: time-1000 / time-1030; grid-column: time">10:00 AM</div>
+            <div style="grid-row: time-1030 / time-1100; grid-column: time">10:30 AM</div>
+            <div style="grid-row: time-1100 / time-1130; grid-column: time">11:00 AM</div>
+            <div style="grid-row: time-1130 / time-1200; grid-column: time">11:30 AM</div>
+            <div style="grid-row: time-1200 / time-1230; grid-column: time">12:00 PM</div>
+            <div style="grid-row: time-1230 / time-1300; grid-column: time">12:30 PM</div>
+            <div style="grid-row: time-1300 / time-1330; grid-column: time">1:00 PM</div>
+            <div style="grid-row: time-1330 / time-1400; grid-column: time">1:30 PM</div>
+            <div style="grid-row: time-1400 / time-1430; grid-column: time">2:00 PM</div>
+            <div style="grid-row: time-1430 / time-1500; grid-column: time">2:30 PM</div>
+            <div style="grid-row: time-1500 / time-1530; grid-column: time">3:00 PM</div>
+            <div style="grid-row: time-1530 / time-1600; grid-column: time">3:30 PM</div>
+            <div style="grid-row: time-1600 / time-1630; grid-column: time">4:00 PM</div>
+            <div style="grid-row: time-1630 / time-1700; grid-column: time">4:30 PM</div>
+            <div style="grid-row: time-1700 / time-1730; grid-column: time">5:00 PM</div>
+            <div style="grid-row: time-1730 / time-1800; grid-column: time">5:30 PM</div>
+            <div style="grid-row: time-1800 / time-1830; grid-column: time">6:00 PM</div>
+            <div style="grid-row: time-1830 / time-1900; grid-column: time">6:30 PM</div>
+            <div style="grid-row: time-1900 / time-1930; grid-column: time">7:00 PM</div>
+            <div style="grid-row: time-1930 / time-2000; grid-column: time">7:30 PM</div>
+            <div style="grid-row: time-2000 / time-2030; grid-column: time">8:00 PM</div>
+            <div style="grid-row: time-2030 / time-2100; grid-column: time">8:30 PM</div>
+            <div style="grid-row: time-2100 / time-2130; grid-column: time">9:00 PM</div>
+            <div style="grid-row: time-2130 / time-2200; grid-column: time">9:30 PM</div>
+            <div style="grid-row: time-2200 / time-2230; grid-column: time">10:00 PM</div>
+            <div style="grid-row: time-2230 / time-2300; grid-column: time">10:30 PM</div>
+            <div style="grid-row: time-2300 / time-2330; grid-column: time">11:00 PM</div>
+            <div style="grid-row: time-2330 / time-0000; grid-column: time">11:30 PM</div>
+            <div style="grid-row: time-0000 / time-0030; grid-column: time">12:00 AM</div>
+            <div style="grid-row: time-0030 / time-0100; grid-column: time">12:30 AM</div>
+            <div style="grid-row: time-0100 / time-0130; grid-column: time">1:00 AM</div>
+            <div style="grid-row: time-0130 / time-0200; grid-column: time">1:30 AM</div>
+            <div style="grid-row: time-0200 / time-0200; grid-column: time">2:00 AM</div>
+            {% for event in events %}
+                <div class="event cleared-prior-{{ event.get('cleared_prior') }}"
+                     style="grid-row: time-{{ event.get('start_time') }} / time-{{ event.get('end_time') }};
+                            grid-column: room-{{ event.get('room') }}">
+                    <p class="event-time">
+                        {{ event.get('start') }} - {{ event.get('end') }}
+                    </p>
+                    <p class="event-title" title="{{ event.get('description')|escape }}">
+                        {{ event.get('title') }}
+                    </p>
+                    <p class="event-room">
+                        {{ event.get('room') }}
+                    </p>
+                    <p class="event-cleared">
+                        {% if event.get('cleared_prior') == 'Y' %}
+                        Cleared Prior
+                        {% elif event.get('cleared_prior') == 'N' %}
+                        Not Cleared Prior
+                        {% else %}
+                        {% endif %}
+                        {% if event.get('cleared_prior') != '?' and event.get('cleared_after') != '?' %}
+                        <br>
+                        {% endif %}
+                        {% if event.get('cleared_after') == 'Y' %}
+                        Cleared After
+                        {% elif event.get('cleared_after') == 'N' %}
+                        Not Cleared After
+                        {% else %}
+                        {% endif %}
+                    </p>
+                </div>
+            {% endfor %}
+        </section>
+    </body>
+</html>

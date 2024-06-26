@@ -1,0 +1,872 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
+        <link rel="stylesheet" href="style.css">
+        <title>Day 4 - AX 2024</title>
+    </head>
+    <body>
+        <h1>Anime Expo Schedule Table 2024</h1>
+        <section class="schedule">
+            <header style="grid-column: 1 / -1">
+                <nav>
+                    <h2>Day 4</h2>
+                    <a href="day1.html">Day 1</a>
+                    <a href="day2.html">Day 2</a>
+                    <a href="day3.html">Day 3</a>
+                    <a href="day4.html">Day 4</a>
+                    <div class="legend">
+                        <span>
+                            <span class="legend-cleared cleared-prior-Y"></span> Cleared Prior
+                        </span>
+                        &nbsp;
+                        <span>
+                            <span class="legend-cleared cleared-prior-N"></span> Not Cleared Prior
+                        </span>
+                        &nbsp;
+                        <span>
+                            Last updated: 2024-06-26 13:23
+                        </span>
+                    </div>
+                </nav>
+                <hr>
+            </header>
+            <div style="grid-column: time"></div>
+            <div style="grid-column: room-main-events">Main Events</div>
+            <div style="grid-column: room-petree-hall">Petree Hall</div>
+            <div style="grid-column: room-jw-platinum">JW Platinum</div>
+            <div style="grid-column: room-jw-diamond">JW Diamond</div>
+            <div style="grid-column: room-ax-crossing-stage">AX Crossing Stage</div>
+            <div style="grid-column: room-community-stage">Community Stage</div>
+            <div style="grid-column: room-the-novo">The Novo</div>
+            <!--
+            <div style="grid-column: room-grammy-museum-terrace">Grammy Museum Terrace</div>
+            -->
+            <div style="grid-column: room-402-AB">402 AB</div>
+            <div style="grid-column: room-403-AB">403 AB</div>
+            <div style="grid-column: room-404-AB">404 AB</div>
+            <div style="grid-column: room-406-AB">406 AB</div>
+            <div style="grid-column: room-408-AB">408 AB</div>
+            <div style="grid-column: room-409-AB">409 AB</div>
+            <div style="grid-column: room-411">411</div>
+            <div style="grid-column: room-511-ABC">511 ABC</div>
+            <!--
+            <div style="grid-column: room-511">511</div>
+            <div style="grid-column: room-515-A">515 A</div>
+            <div style="grid-column: room-515-B">515 B</div>
+            -->
+            <div style="grid-column: room-ax-dance">AX Dance</div>
+            <div style="grid-column: room-beer-garden">Beer Garden</div>
+            <div style="grid-column: room-lounge21">Lounge 21</div>
+            <div style="grid-row: time-1000 / time-1030; grid-column: time">10:00 AM</div>
+            <div style="grid-row: time-1030 / time-1100; grid-column: time">10:30 AM</div>
+            <div style="grid-row: time-1100 / time-1130; grid-column: time">11:00 AM</div>
+            <div style="grid-row: time-1130 / time-1200; grid-column: time">11:30 AM</div>
+            <div style="grid-row: time-1200 / time-1230; grid-column: time">12:00 PM</div>
+            <div style="grid-row: time-1230 / time-1300; grid-column: time">12:30 PM</div>
+            <div style="grid-row: time-1300 / time-1330; grid-column: time">1:00 PM</div>
+            <div style="grid-row: time-1330 / time-1400; grid-column: time">1:30 PM</div>
+            <div style="grid-row: time-1400 / time-1430; grid-column: time">2:00 PM</div>
+            <div style="grid-row: time-1430 / time-1500; grid-column: time">2:30 PM</div>
+            <div style="grid-row: time-1500 / time-1530; grid-column: time">3:00 PM</div>
+            <div style="grid-row: time-1530 / time-1600; grid-column: time">3:30 PM</div>
+            <div style="grid-row: time-1600 / time-1630; grid-column: time">4:00 PM</div>
+            <div style="grid-row: time-1630 / time-1700; grid-column: time">4:30 PM</div>
+            <div style="grid-row: time-1700 / time-1730; grid-column: time">5:00 PM</div>
+            <div style="grid-row: time-1730 / time-1800; grid-column: time">5:30 PM</div>
+            <div style="grid-row: time-1800 / time-1830; grid-column: time">6:00 PM</div>
+            <div style="grid-row: time-1830 / time-1900; grid-column: time">6:30 PM</div>
+            <div style="grid-row: time-1900 / time-1930; grid-column: time">7:00 PM</div>
+            <div style="grid-row: time-1930 / time-2000; grid-column: time">7:30 PM</div>
+            <div style="grid-row: time-2000 / time-2030; grid-column: time">8:00 PM</div>
+            <div style="grid-row: time-2030 / time-2100; grid-column: time">8:30 PM</div>
+            <div style="grid-row: time-2100 / time-2130; grid-column: time">9:00 PM</div>
+            <div style="grid-row: time-2130 / time-2200; grid-column: time">9:30 PM</div>
+            <div style="grid-row: time-2200 / time-2230; grid-column: time">10:00 PM</div>
+            <div style="grid-row: time-2230 / time-2300; grid-column: time">10:30 PM</div>
+            <div style="grid-row: time-2300 / time-2330; grid-column: time">11:00 PM</div>
+            <div style="grid-row: time-2330 / time-0000; grid-column: time">11:30 PM</div>
+            <div style="grid-row: time-0000 / time-0030; grid-column: time">12:00 AM</div>
+            <div style="grid-row: time-0030 / time-0100; grid-column: time">12:30 AM</div>
+            <div style="grid-row: time-0100 / time-0130; grid-column: time">1:00 AM</div>
+            <div style="grid-row: time-0130 / time-0200; grid-column: time">1:30 AM</div>
+            <div style="grid-row: time-0200 / time-0200; grid-column: time">2:00 AM</div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1000 / time-1050;
+                            grid-column: room-main-events">
+                    <p class="event-time">
+                        10:00 AM - 10:50 AM
+                    </p>
+                    <p class="event-title" title="Join Crunchyroll and special guests Junya Enoki (Japanese voice of Yuji Itadori), Shota Goshozono (Director of Season 2), and Keisuke Seshimo (Animation Lead Producer, MAPPA) in celebration of the mega-hit series - JUJUTSU KAISEN! ***This room WILL be cleared after this panel.***">
+                        JUJUTSU KAISEN panel, powered by Crunchyroll
+                    </p>
+                    <p class="event-room">
+                        main-events
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1000 / time-1050;
+                            grid-column: room-409-AB">
+                    <p class="event-time">
+                        10:00 AM - 10:50 AM
+                    </p>
+                    <p class="event-title" title="Calling all Survey Corps, Demon Slayers, and Hero Associates. Participate in our 2010s anime music trivia by finding your quirk, forming a contract, and transporting to a world of musical wonders! Prizes to be given to those who correctly answer the most anime songs. ***This room will NOT be cleared for the next panel.***">
+                        2010s Anime Music Trivia
+                    </p>
+                    <p class="event-room">
+                        409-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1000 / time-1050;
+                            grid-column: room-402-AB">
+                    <p class="event-time">
+                        10:00 AM - 10:50 AM
+                    </p>
+                    <p class="event-title" title="New to Genshin Impact? We’ll explain it to you. Experienced player with theories? We’ll listen and debate with you. Confused as to what Paimon is really hiding? So are we! 
+Come join a pair of Genshin Experts, Nancy and Kori, while we talk about all things Genshin Impact. Lore, theories and all! ***This room will NOT be cleared for the next panel.***">
+                        Genshin Impact Lore - Past, Present & Future
+                    </p>
+                    <p class="event-room">
+                        402-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1000 / time-1050;
+                            grid-column: room-404-AB">
+                    <p class="event-time">
+                        10:00 AM - 10:50 AM
+                    </p>
+                    <p class="event-title" title="Join experienced performers and decorated masquerade competitors Team LuKa for their tips on crafting an award-winning masquerade performance. (This panel is aimed at intermediate-level competitors, but all are welcome to attend!) ***This room will NOT be cleared for the next panel.***">
+                        Step Up Your Skit: Cosplay Performance 202
+                    </p>
+                    <p class="event-room">
+                        404-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1000 / time-1050;
+                            grid-column: room-403-AB">
+                    <p class="event-time">
+                        10:00 AM - 10:50 AM
+                    </p>
+                    <p class="event-title" title="At this panel the host will teach you how to virtually travel with research techniques as a means to add to your cultural knowledge. They’ll use &#34;Detective Conan,” also called &#34;Case Closed,&#34; to demonstrate how to create a virtual pilgrimage and provide a few case studies for reference. ***This room will NOT be cleared for the next panel.***">
+                        Virtual Tourism With Anime with The Anime View
+                    </p>
+                    <p class="event-room">
+                        403-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1015 / time-1105;
+                            grid-column: room-406-AB">
+                    <p class="event-time">
+                        10:15 AM - 11:05 AM
+                    </p>
+                    <p class="event-title" title="In this family friendly workshop, participants will delve into Japanese American cultural values while embarking on a creative journey to craft &amp; design their very own folding fan using recycled materials. Come join us at Kizuna Little Tokyo, Anime Expo&#39;s 2024 Charity Recipient, for a memorable experience that celebrates culture, creativity, and connection! ***This room WILL be cleared for the next panel.***">
+                        Create Your Own Folding Fan & Learn About Japanese American Values!
+                    </p>
+                    <p class="event-room">
+                        406-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1030 / time-1120;
+                            grid-column: room-411">
+                    <p class="event-time">
+                        10:30 AM - 11:20 AM
+                    </p>
+                    <p class="event-title" title="Join professional journalists and editors from Anime News Network and other outlets to learn how to start a career in anime journalism, get pointers on how to pitch editorial, the rigorous requirements to report the news, and more. ***This room will NOT be cleared for the next panel.***">
+                        Anime Journalism: So you want to be an otaku gumshoe?
+                    </p>
+                    <p class="event-room">
+                        411
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1030 / time-1120;
+                            grid-column: room-511-ABC">
+                    <p class="event-time">
+                        10:30 AM - 11:20 AM
+                    </p>
+                    <p class="event-title" title="Kodansha is proud to present a special panel with Kamome Shirahama, the incredibly talented manga creator behind the all-ages epic fantasy series Witch Hat Atelier. Join us for what promises to be an enchanting experience featuring a live drawing, a Q&amp;A session, and a showcase of the inspiration behind the upcoming Witch Hat Atelier animated series. Please note that photography and video recording during the panel are strictly prohibited. Seats will also be limited, so be sure to show up early for this must-see creator spotlight event! ***This room will NOT be cleared for the next panel.***">
+                        Kodansha Presents Kamome Shirahama Panel
+                    </p>
+                    <p class="event-room">
+                        511-ABC
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1030 / time-1120;
+                            grid-column: room-408-AB">
+                    <p class="event-time">
+                        10:30 AM - 11:20 AM
+                    </p>
+                    <p class="event-title" title="Saint Seiya is a franchise that&#39;s huge in Europe, South America, and Mexico, but never had the same success in English speaking parts of the world. Ramses of the Saint Seiya Cosmocast will teach you the ins and outs of the beloved franchise and discuss why you should check it out! ***This room will NOT be cleared for the next panel.***">
+                        Saint Seiya: The Best Anime You Never Heard of
+                    </p>
+                    <p class="event-room">
+                        408-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1130 / time-1250;
+                            grid-column: room-404-AB">
+                    <p class="event-time">
+                        11:30 AM - 12:50 PM
+                    </p>
+                    <p class="event-title" title="Kotobukiya is back again providing the latest figure and model kit updates to your favorite series, ranging from your favorite shounen ARTFX J all the way to classic video games, like MEGA MAN! Participate in polls to give input on what you want to see the most, be the first to see the latest series and products joining our lineup, and earn the chance to get free goodies as well! ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        Kotobukiya Figure and Model Kit Showcase
+                    </p>
+                    <p class="event-room">
+                        404-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1130 / time-1230;
+                            grid-column: room-402-AB">
+                    <p class="event-time">
+                        11:30 AM - 12:30 PM
+                    </p>
+                    <p class="event-title" title="eigoMANGA&#39;s development team will host a panel to discuss anime/manga app development for the mobile devices; referencing their experiences from developing and releasing the anime mobile fighting game &#34;Vanguard Princess&#34;, the mobile virtual reality manga app &#34;ComX VR&#34;, and the manga streaming app &#34;Comic Climax&#34;. ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        eigoMANGA's Developing Anime Mobile Apps
+                    </p>
+                    <p class="event-room">
+                        402-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1130 / time-1220;
+                            grid-column: room-403-AB">
+                    <p class="event-time">
+                        11:30 AM - 12:20 PM
+                    </p>
+                    <p class="event-title" title="Join acclaimed anime screenwriter Gen Urobuchi (Fate/Zero, Psycho-Pass) along with the game’s lead VO actor for a discussion regarding the creation of his new game - Rusty Rabbit. Fans will see brand new content from the game, hear about his background in anime and games, and how that led to Rusty Rabbit’s development. A fan Q&amp;A will follow the presentation. ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        Rusty Rabbit - Anime Storytelling in Video Games
+                    </p>
+                    <p class="event-room">
+                        403-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-Y"
+                     style="grid-row: time-1145 / time-1305;
+                            grid-column: room-406-AB">
+                    <p class="event-time">
+                        11:45 AM - 1:05 PM
+                    </p>
+                    <p class="event-title" title="Discover the beauty of いけばな (Ikebana)! 🌸 Join our hands-on workshop and live demo with Professor Minamitani. Learn Japanese Ikenobo floral art, express your creativity, and connect with nature. Don&#39;t miss out on the chance to explore culture, history, and the beauty of ikebana! 🌼 ***This room WILL be cleared prior to this panel. This room WILL be cleared after this panel.***">
+                        Ikebana - Japanese floral art - Workshop
+                    </p>
+                    <p class="event-room">
+                        406-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1200 / time-1400;
+                            grid-column: room-petree-hall">
+                    <p class="event-time">
+                        12:00 PM - 2:00 PM
+                    </p>
+                    <p class="event-title" title="Join us for a captivating fashion show that transports you to the enchanting era of the Edo Period. Immerse yourself in the rich history and exquisite artistry of traditional Japanese attire that showcase a modern and traditional take on today&#39;s fashion. ">
+                        Fashion Show
+                    </p>
+                    <p class="event-room">
+                        petree-hall
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1200 / time-1250;
+                            grid-column: room-511-ABC">
+                    <p class="event-time">
+                        12:00 PM - 12:50 PM
+                    </p>
+                    <p class="event-title" title="When creating a cosplay, accuracy isn’t everything! Building upon a character’s original design can make a cosplay feel more life-like and tell a story about who your character is. This panel will focus on analyzing your character, researching historical and aesthetic inspirations, organizing ideas, and making decisions as you design your cosplay. 
+
+* Presented by AX24 Cosplay Senpai AriNico Cosplay ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        Telling a Story with Cosplay
+                    </p>
+                    <p class="event-room">
+                        511-ABC
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1215 / time-1305;
+                            grid-column: room-409-AB">
+                    <p class="event-time">
+                        12:15 PM - 1:05 PM
+                    </p>
+                    <p class="event-title" title="Looking for a new manga to get hooked on? In this session, our team of manga aficionados will be your own personal algorithm, taking cues from manga (or anime, or any media, really…) you’ve previously enjoyed, and giving personalized suggestions for new or under-the-radar manga series to check out! ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        Human Algorithm: Manga Recommendations from Manga Fans
+                    </p>
+                    <p class="event-room">
+                        409-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1245 / time-1335;
+                            grid-column: room-411">
+                    <p class="event-time">
+                        12:45 PM - 1:35 PM
+                    </p>
+                    <p class="event-title" title="You ever just sit back and think &#34;Gosh This anime world sucks&#34; well we do too! Come talk about it with us. ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        Outlandish Otakus presents, This World Sucks
+                    </p>
+                    <p class="event-room">
+                        411
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-?"
+                     style="grid-row: time-1245 / time-1335;
+                            grid-column: room-408-AB">
+                    <p class="event-time">
+                        12:45 PM - 1:35 PM
+                    </p>
+                    <p class="event-title" title="Join HIDIVE for the North American premiere of Loner Life in Another World, the upcoming Fall 2024 isekai adventure simulcast — fun for lone wolves and social butterflies alike! ">
+                        HIDIVE Presents “Loner Life in Another World” North American Premiere
+                    </p>
+                    <p class="event-room">
+                        408-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1345 / time-1430;
+                            grid-column: room-402-AB">
+                    <p class="event-time">
+                        1:45 PM - 2:30 PM
+                    </p>
+                    <p class="event-title" title="Anime Expo has come and gone once again. Let us know what you loved, what you want to see more of, and what we can improve on for next year. A team of SPJA staff who worked tirelessly behind the scenes to bring you this year&#39;s event will be there to listen. Thank you for your continued support! ***This room will NOT be cleared prior to this panel. This room will NOT be cleared after this panel.***">
+                        Anime Expo 2024 Feedback Panel
+                    </p>
+                    <p class="event-room">
+                        402-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        <br>
+                        
+                        
+                        Not Cleared After
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1345 / time-1435;
+                            grid-column: room-409-AB">
+                    <p class="event-time">
+                        1:45 PM - 2:35 PM
+                    </p>
+                    <p class="event-title" title="Are you looking for a simple way to up your cosplay game? Want to learn embroidery, but don’t know where to start? Come learn basic beadwork embroidery and take your details to a whole new level! ***This room will NOT be cleared prior to this panel.***">
+                        Beading for Beginners
+                    </p>
+                    <p class="event-room">
+                        409-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1345 / time-1545;
+                            grid-column: room-403-AB">
+                    <p class="event-time">
+                        1:45 PM - 3:45 PM
+                    </p>
+                    <p class="event-title" title="Celebrate the best in anime and music fusion at the Anime Expo 2024 Anime Music Video (AMV) Competition Awards! Join us as we unveil the winners across various categories, showcasing exceptional artistry, storytelling, and technical prowess. ***This room will NOT be cleared prior to this panel.***">
+                        AMV Awards
+                    </p>
+                    <p class="event-room">
+                        403-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1415 / time-1505;
+                            grid-column: room-404-AB">
+                    <p class="event-time">
+                        2:15 PM - 3:05 PM
+                    </p>
+                    <p class="event-title" title="Learn how to use motion capture technology to animate your own stories.  Create a character with VRoid Studio and use them to make your own anime or VTube.  We&#39;ll go over VSeeFace, Motion Capture with Sony Mocopi, Take Recorder in Unreal Engine and live recording in Unity 3D. ***This room will NOT be cleared prior to this panel.***">
+                        AniMotion Capture
+                    </p>
+                    <p class="event-room">
+                        404-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1415 / time-1515;
+                            grid-column: room-408-AB">
+                    <p class="event-time">
+                        2:15 PM - 3:15 PM
+                    </p>
+                    <p class="event-title" title="You’ve played or seen Jeopardy, but get ready to play a game dedicated to trivia entirely based on The attendees will be split into two teams, both Mahoko and Kisegi themed. 2 groups of 3 will be put up in a traditional gameshow style. A predetermined PowerPoint game will be arranged where players can select different categories and point systems. From this point, the team that has the highest points will then win.  ***This room will NOT be cleared prior to this panel.***">
+                        Anime Jeopardy
+                    </p>
+                    <p class="event-room">
+                        408-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1430 / time-1520;
+                            grid-column: room-511-ABC">
+                    <p class="event-time">
+                        2:30 PM - 3:20 PM
+                    </p>
+                    <p class="event-title" title="Learn the step-by-step processes behind what makes a successful animation, presented by Tingmu Yang, an industry veteran and founder of the collaborating studio behind Honkai: Star Rail&#39;s animated shorts.  ***This room will NOT be cleared prior to this panel.***">
+                        A Sharing in Animation - Presented by the collaborating studio behind Honkai: Star Rail's animated shorts
+                    </p>
+                    <p class="event-room">
+                        511-ABC
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-Y"
+                     style="grid-row: time-1430 / time-1550;
+                            grid-column: room-406-AB">
+                    <p class="event-time">
+                        2:30 PM - 3:50 PM
+                    </p>
+                    <p class="event-title" title="FREE Workshop, Reserve your spot. Click on the Ticketing Link. 
+Join our exclusive workshop on traditional Japanese kite making and flying, led by world-renowned kite master and Guest of Honor, Mikio Toki. Since 1975, he has educated enthusiasts in the art of Edo-style kite crafting. Craft kites with &#34;washi&#34; paper and bamboo, inspired by samurai, Kabuki, and Ukiyo-e. Fly them under expert guidance, connecting with this ancient art form. Don&#39;t miss this blend of cultural education and outdoor fun! ***This room WILL be cleared prior to this panel. ***">
+                        Traditional Edo-style Kite Making + Flying Workshop with Kite Master Mikio Toki
+                    </p>
+                    <p class="event-room">
+                        406-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1430 / time-1520;
+                            grid-column: room-411">
+                    <p class="event-time">
+                        2:30 PM - 3:20 PM
+                    </p>
+                    <p class="event-title" title="Publishing manga since 1997, join team TOKYOPOP as they discuss recent releases, upcoming titles, new imprints, and what&#39;s yet to come! ***This room will NOT be cleared prior to this panel.***">
+                        TOKYOPOP: Manga for Everyone
+                    </p>
+                    <p class="event-room">
+                        411
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-N"
+                     style="grid-row: time-1500 / time-1550;
+                            grid-column: room-402-AB">
+                    <p class="event-time">
+                        3:00 PM - 3:50 PM
+                    </p>
+                    <p class="event-title" title="Why are the series so long? What’s with the eyes and the hair? A panel of industry pros will enrich your understanding of manga, discussing the history of the medium, similarities between manga and other comics traditions, and how the material conditions and production practices shape these stories. ***This room will NOT be cleared prior to this panel.***">
+                        How Is Manga Made? A Background Session for Educators and Librarians
+                    </p>
+                    <p class="event-room">
+                        402-AB
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Not Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-Y"
+                     style="grid-row: time-1600 / time-1700;
+                            grid-column: room-main-events">
+                    <p class="event-time">
+                        4:00 PM - 5:00 PM
+                    </p>
+                    <p class="event-title" title="As Anime Expo 2024 concludes, the closing ceremony will give AX attendees the chance to reflect and wrap up their experiences with various performances and closing traditions. ***This room will be cleared prior to this panel.***">
+                        Closing Ceremony
+                    </p>
+                    <p class="event-room">
+                        main-events
+                    </p>
+                    <p class="event-cleared">
+                        
+                        Cleared Prior
+                        
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-"
+                     style="grid-row: time-1000 / time-1100;
+                            grid-column: room-community-stage">
+                    <p class="event-time">
+                        10:00AM - 11:00AM
+                    </p>
+                    <p class="event-title" title="">
+                        Stephanie Yanez
+                    </p>
+                    <p class="event-room">
+                        community-stage
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        <br>
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-"
+                     style="grid-row: time-1200 / time-1500;
+                            grid-column: room-community-stage">
+                    <p class="event-time">
+                        12:00 PM - 3:00 PM
+                    </p>
+                    <p class="event-title" title="">
+                        Charity Auction
+                    </p>
+                    <p class="event-room">
+                        community-stage
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        <br>
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-"
+                     style="grid-row: time-1130 / time-1330;
+                            grid-column: room-ax-dance">
+                    <p class="event-time">
+                        11:30 AM - 1:30 PM
+                    </p>
+                    <p class="event-title" title="">
+                        RANDOM PLAY DANCE ★ KPOP Edition
+                    </p>
+                    <p class="event-room">
+                        ax-dance
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        <br>
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-"
+                     style="grid-row: time-1130 / time-1230;
+                            grid-column: room-beer-garden">
+                    <p class="event-time">
+                        11:30 AM - 12:30 PM
+                    </p>
+                    <p class="event-title" title="">
+                        Lucrecia
+                    </p>
+                    <p class="event-room">
+                        beer-garden
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        <br>
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-"
+                     style="grid-row: time-1330 / time-1430;
+                            grid-column: room-beer-garden">
+                    <p class="event-time">
+                        1:30PM - 2:30PM
+                    </p>
+                    <p class="event-title" title="">
+                        Nevos Tyler
+                    </p>
+                    <p class="event-room">
+                        beer-garden
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        <br>
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+                <div class="event cleared-prior-"
+                     style="grid-row: time-1300 / time-1400;
+                            grid-column: room-lounge21">
+                    <p class="event-time">
+                        1:00 PM - 2:00 PM
+                    </p>
+                    <p class="event-title" title="">
+                        Colin and Steve's Lofi Living Room
+                    </p>
+                    <p class="event-room">
+                        lounge21
+                    </p>
+                    <p class="event-cleared">
+                        
+                        
+                        
+                        <br>
+                        
+                        
+                        
+                    </p>
+                </div>
+            
+        </section>
+    </body>
+</html>

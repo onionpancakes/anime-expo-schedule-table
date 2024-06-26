@@ -15,5 +15,5 @@ $ source .venv/bin/activate
 
 (.venv) $ pip install -r requirements.txt
 
-(.venv) $ python ax_schedule_table.py
+(.venv) $ python ax2024/ax_schedule_table.py
 ```
