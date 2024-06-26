@@ -114,8 +114,8 @@ def write_parsed_events_csv(events, filepath='ax2024/data/parsed_events.csv'):
 def read_events():
     with open('ax2024/data/parsed_events.csv') as f:
         yield from (e for e in csv.DictReader(f) if e['cancelled'] == 'False')
-    #with open('data/community_events.csv') as f:
-    #    yield from csv.DictReader(f)
+    with open('ax2024/data/community_events.csv') as f:
+        yield from csv.DictReader(f)
     #with open('data/ax_dance_events.csv') as f:
     #    yield from csv.DictReader(f)
     #with open('data/beer_garden_events.csv') as f:
