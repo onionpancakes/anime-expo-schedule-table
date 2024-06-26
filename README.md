@@ -1,8 +1,6 @@
-# Anime Expo Schedule Table 2023
+# Anime Expo Schedule Table
 
-Visit published page:
-
-https://onionpancakes.github.io/anime-expo-schedule-table/day1.html
+https://onionpancakes.github.io/anime-expo-schedule-table/2024/day1.html
 
 ## Development
 
