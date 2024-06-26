@@ -72,13 +72,11 @@ def parse_event(node):
     room = ROOM_MAPPING.get(room_text, room_text)
     # Start
     start = node.css.select_one('.timebar .start .bold').text.strip()
-    start_datetime = datetime.strptime(start, '%I:%M %p')
-    start_time = '{:02d}{:02d}'.format(start_datetime.hour, start_datetime.minute)
+    start_time = datetime.strptime(start, '%I:%M %p').strftime('%H%M')
     # End
     end = node.css.select_one('.timebar .end .bold').text.strip()
     end_correct = END_CORRECTION.get((day, title, end), end)
-    end_datetime = datetime.strptime(end_correct, '%I:%M %p')
-    end_time = '{:02d}{:02d}'.format(end_datetime.hour, end_datetime.minute)
+    end_time = datetime.strptime(end_correct, '%I:%M %p').strftime('%H%M')
     # Description
     description = ''.join(t.text for t in node.css.select_one('.desc') if isinstance(t, NavigableString))
     return {
