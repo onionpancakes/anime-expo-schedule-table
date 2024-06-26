@@ -14,11 +14,13 @@ DAY_MAPPING = {
 ROOM_MAPPING = {
     'Main Events': 'main-events',
     'Petree Hall': 'petree-hall',
-    'Community Stage': 'community-stage',
     'JW-Diamond': 'jw-diamond',
     'JW-Platinum': 'jw-platinum',
+    'AX Crossing Stage': 'ax-crossing-stage',
+    'Community Stage': 'community-stage',
     'The Novo': 'the-novo',
     'Grammy Museum Terrace': 'grammy-museum-terrace',
+    'Peacock Theater': 'peacock-theater',
     '402AB': '402-AB',
     '403AB': '403-AB',
     '404AB': '404-AB',
@@ -89,6 +91,7 @@ def parse_event(node):
         'description': description,
         'cleared_prior': is_cleared_prior(description),
         'cleared_after': is_cleared_after(description),
+        'cancelled': 'CANCELED' in title or 'CANCELLED' in title
     }
 
 def parse_ax_schedule_local(filepath='ax_schedule.html'):
@@ -103,14 +106,14 @@ def parse_ax_schedule_web(url='https://www.anime-expo.org/ax/schedule-2024/'):
 
 def write_parsed_events_csv(events, filepath='ax2024/data/parsed_events.csv'):
     with open(filepath, 'w') as f:
-        fieldnames = ['day', 'start', 'end', 'start_time', 'end_time', 'room', 'cleared_prior', 'cleared_after', 'title', 'description']
+        fieldnames = ['day', 'start', 'end', 'start_time', 'end_time', 'room', 'cleared_prior', 'cleared_after', 'title', 'description', 'cancelled']
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(events)
 
 def read_events():
     with open('ax2024/data/parsed_events.csv') as f:
-        yield from (e for e in csv.DictReader(f) if 'CANCELED' not in e['title'])
+        yield from (e for e in csv.DictReader(f) if e['cancelled'] == 'False')
     #with open('data/community_events.csv') as f:
     #    yield from csv.DictReader(f)
     #with open('data/ax_dance_events.csv') as f:
