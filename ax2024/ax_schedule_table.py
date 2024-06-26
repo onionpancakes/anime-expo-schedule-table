@@ -183,7 +183,7 @@ def write_schedule_table(events):
         events_by_day.setdefault(e.get('day'), []).append(e)
     template = JINJA_ENV.get_template('template.html')
     for day in ['1','2','3','4']:
-        render = template.render(day=day, events=events_by_day.get(day))
+        render = template.render(day=day, events=events_by_day.get(day), last_updated_time=datetime.now().strftime('%Y-%m-%d %H:%M'))
         with open(f'docs/2024/day{day}.html'.format(day), 'w') as f:
             print(render, file=f)
 
