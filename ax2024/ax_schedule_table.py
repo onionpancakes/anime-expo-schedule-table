@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup, NavigableString
 import csv
 import jinja2
 from datetime import datetime
+import re
 
 DAY_MAPPING = {
     'Day 1 - July 4': '1',
@@ -111,17 +112,68 @@ def write_parsed_events_csv(events, filepath='ax2024/data/parsed_events.csv'):
         writer.writeheader()
         writer.writerows(events)
 
+# Activity events
+
+ACTIVITY_EVENT_PATTERN = re.compile('(\d\d?:\d\d\s?(?:AM|PM))\s+-\s+(\d\d?:\d\d\s?(?:AM|PM))\s+-\s+(.+)')
+
+def parse_activity_event(node, day, room):
+    m = ACTIVITY_EVENT_PATTERN.match(node.text.strip())
+    try:
+        start_time = datetime.strptime(m.group(1), '%I:%M %p').strftime('%H%M')
+    except:
+        start_time = datetime.strptime(m.group(1), '%I:%M%p').strftime('%H%M')
+    try:
+        end_time = datetime.strptime(m.group(2), '%I:%M %p').strftime('%H%M')
+    except:
+        end_time = datetime.strptime(m.group(2), '%I:%M%p').strftime('%H%M')
+    return {
+        'day': day,
+        'title': m.group(3),
+        'room': room,
+        'start': m.group(1),
+        'end': m.group(2),
+        'start_time': start_time,
+        'end_time': end_time,
+        'description': None,
+        'cleared_prior': None,
+        'cleared_after': None,
+        'cancelled': None
+    }
+
+ACTIVITY_DAY_MAPPING = {
+    'July 4 (DAY 1)': 1,
+    'July 5 (DAY 2)': 2,
+    'July 6 (DAY 3)': 3,
+    'July 7 (DAY 4)': 4,
+}
+
+def parse_activity(url, room):
+    with urlopen(url) as f:
+        soup = BeautifulSoup(f, 'html.parser')
+    day = None
+    for e in soup.css.select('.section-group > *'):
+        if e.text.strip() == '':
+            continue
+        elif e.text in ACTIVITY_DAY_MAPPING:
+            day = ACTIVITY_DAY_MAPPING.get(e.text)
+        elif ACTIVITY_EVENT_PATTERN.match(e.text):
+            yield parse_activity_event(e, day, room)
+        else:
+            continue
+
+# Schedule
+
 def read_events():
     with open('ax2024/data/parsed_events.csv') as f:
-        yield from (e for e in csv.DictReader(f) if e['cancelled'] == 'False')
+        yield from (e for e in csv.DictReader(f) if e['cancelled'] != 'True')
     with open('ax2024/data/community_events.csv') as f:
         yield from csv.DictReader(f)
-    #with open('data/ax_dance_events.csv') as f:
-    #    yield from csv.DictReader(f)
-    #with open('data/beer_garden_events.csv') as f:
-    #    yield from csv.DictReader(f)
-    #with open('data/lounge21_events.csv') as f:
-    #    yield from csv.DictReader(f)
+    with open('ax2024/data/ax_dance_events.csv') as f:
+        yield from csv.DictReader(f)
+    with open('ax2024/data/beer_garden_events.csv') as f:
+        yield from csv.DictReader(f)
+    with open('ax2024/data/lounge21_events.csv') as f:
+        yield from csv.DictReader(f)
 
 JINJA_ENV = jinja2.Environment(loader=jinja2.PackageLoader('ax_schedule_table'))
 
@@ -137,7 +189,19 @@ def write_schedule_table(events):
 
 if __name__ == '__main__':
     parsed_events = parse_ax_schedule_web()
-    write_parsed_events_csv(parsed_events)
+    write_parsed_events_csv(parsed_events, 'ax2024/data/parsed_events.csv')
+    # Community Stage
+    parsed_community_stage = parse_activity('https://www.anime-expo.org/activity/community-stage/', 'community-stage')
+    write_parsed_events_csv(parsed_community_stage, 'ax2024/data/community_events.csv')
+    # Ax Dance
+    parsed_ax_dance = parse_activity('https://www.anime-expo.org/activity/ax-dance/', 'ax-dance')
+    write_parsed_events_csv(parsed_ax_dance, 'ax2024/data/ax_dance_events.csv')
+    # Beer Garden
+    parsed_beer_garden = parse_activity('https://www.anime-expo.org/activity/beer-garden/', 'beer-garden')
+    write_parsed_events_csv(parsed_beer_garden, 'ax2024/data/beer_garden_events.csv')
+    # Lounge21
+    parsed_lounge21 = parse_activity('https://www.anime-expo.org/activity/lounge-21/', 'lounge21')
+    write_parsed_events_csv(parsed_lounge21, 'ax2024/data/lounge21_events.csv')
     # Generate schedule table
     events = read_events()
     write_schedule_table(events)
