@@ -4,6 +4,7 @@ import csv
 import jinja2
 from datetime import datetime
 import re
+import textwrap
 
 DAY_MAPPING = {
     'Day 1 - July 4': '1',
@@ -81,13 +82,13 @@ def parse_event(node):
     description = ''.join(t.text for t in node.css.select_one('.desc') if isinstance(t, NavigableString))
     return {
         'day': day,
-        'title': title,
+        'title': textwrap.shorten(title, 140, placeholder='...'),
         'room': room,
         'start': start,
         'end': end,
         'start_time': start_time,
         'end_time': end_time,
-        'description': description,
+        'description': f"{title}\n\n{description}",
         'cleared_prior': is_cleared_prior(description),
         'cleared_after': is_cleared_after(description),
         'cancelled': 'CANCELED' in title or 'CANCELLED' in title
