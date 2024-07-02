@@ -54,6 +54,8 @@ def is_cleared_prior(description):
 
 def is_cleared_after(description):
     ldesc = description.lower()
+    if 'this room will be cleared after this panel' in ldesc:
+        return 'Y'
     if 'this room will be cleared for the next panel' in ldesc:
         return 'Y'
     if 'this room will not be cleared after this panel' in ldesc:
@@ -113,7 +115,7 @@ def write_parsed_events_csv(events, filepath='ax2024/data/parsed_events.csv'):
 
 # Activity events
 
-ACTIVITY_EVENT_PATTERN = re.compile('(\d\d?:\d\d\s?(?:AM|PM))\s+-\s+(\d\d?:\d\d\s?(?:AM|PM))\s+-\s+(.+)')
+ACTIVITY_EVENT_PATTERN = re.compile(r'(\d\d?:\d\d\s?(?:AM|PM))\s+-\s+(\d\d?:\d\d\s?(?:AM|PM))\s+-\s+(.+)')
 
 def parse_activity_event(node, day, room):
     m = ACTIVITY_EVENT_PATTERN.match(node.text.strip())
