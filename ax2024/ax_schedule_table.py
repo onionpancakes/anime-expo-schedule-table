@@ -40,11 +40,16 @@ ROOM_MAPPING = {
     'Lounge 21': 'lounge21',
 }
 
+START_CORRECTION = {
+    ('2', 'Cam Steady', '3:30 AM'): '3:30 PM',
+}
+
 # { (day, title, end): end_correct }
 END_CORRECTION = {
     ('1', 'Create Your Own Omamori Amulet & Envision Your Ideal Community!', '3:05 AM'): '3:05 PM',
     ('1', "Voices of the Night: Behind the Making of Ex and Bee - Nightfall's Coven", '4:05 AM'): '4:05 PM',
     ('2', "ATLUS Presents: The World of Metaphor: ReFantazio featuring Katsura Hashino & Shigenori Soejima", '11:20 PM'): '11:20 AM',
+    ('2', 'Cam Steady', '4:30 AM'): '4:30 PM',
 }
 
 def is_cleared_prior(description):
@@ -78,7 +83,8 @@ def parse_event(node):
     room = ROOM_MAPPING.get(room_text, room_text)
     # Start
     start = node.css.select_one('.timebar .start .bold').text.strip()
-    start_time = datetime.strptime(start, '%I:%M %p').strftime('%H%M')
+    start_correct = START_CORRECTION.get((day, title, start), start)
+    start_time = datetime.strptime(start_correct, '%I:%M %p').strftime('%H%M')
     # End
     end = node.css.select_one('.timebar .end .bold').text.strip()
     end_correct = END_CORRECTION.get((day, title, end), end)
