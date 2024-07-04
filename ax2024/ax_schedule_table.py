@@ -35,6 +35,8 @@ ROOM_MAPPING = {
     '515A': '515-A',
     '515B': '515-B',
     'AX Dance (Concourse Hall E)': 'ax-dance',
+    'Beer Garden': 'beer-garden',
+    'Lounge 21': 'lounge21',
 }
 
 # { (day, title, end): end_correct }
@@ -167,14 +169,14 @@ def parse_activity(url, room):
 def read_events():
     with open('ax2024/data/parsed_events.csv') as f:
         yield from (e for e in csv.DictReader(f) if e.get('cancelled') != 'True' and e.get('room') != 'ax-dance')
-    with open('ax2024/data/community_events.csv') as f:
-        yield from csv.DictReader(f)
+    #with open('ax2024/data/community_events.csv') as f:
+    #    yield from csv.DictReader(f)
     with open('ax2024/data/ax_dance_events.csv') as f:
         yield from csv.DictReader(f)
-    with open('ax2024/data/beer_garden_events.csv') as f:
-        yield from csv.DictReader(f)
-    with open('ax2024/data/lounge21_events.csv') as f:
-        yield from csv.DictReader(f)
+    #with open('ax2024/data/beer_garden_events.csv') as f:
+    #    yield from csv.DictReader(f)
+    #with open('ax2024/data/lounge21_events.csv') as f:
+    #    yield from csv.DictReader(f)
 
 JINJA_ENV = jinja2.Environment(loader=jinja2.PackageLoader('ax_schedule_table'))
 
